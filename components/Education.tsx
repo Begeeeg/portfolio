@@ -1,3 +1,4 @@
+import { School } from "lucide-react";
 import Image from "next/image";
 
 export default function Education() {
@@ -24,13 +25,12 @@ export default function Education() {
         <div className="max-w-6xl mx-auto px-6 md:px-12">
             <div className="content-panel py-12 px-8">
                 <div className="flex items-center gap-2 mb-10">
-                    <Image
-                        src="/graduation.png"
-                        alt="Education icon"
+                    <School
                         width={25}
                         height={25}
+                        className="text-(--primaryground)"
                     />
-                    <h1 className="section-title">
+                    <h1 className="text-xl font-semibold text-white">
                         Education
                     </h1>
                 </div>

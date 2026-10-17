@@ -1,3 +1,4 @@
+import { CodeXml } from "lucide-react";
 import Image from "next/image";
 
 export default function Skills() {
@@ -40,7 +41,16 @@ export default function Skills() {
     return (
         <div className="max-w-6xl mx-auto px-6 md:px-12">
             <div className="content-panel py-12 px-8">
-                <h1 className="section-title mb-10">Skills/Tech Stack</h1>
+                <div className="flex items-center gap-2 mb-4">
+                    <CodeXml
+                        width={25}
+                        height={25}
+                        className="text-(--primaryground)"
+                    />
+                    <h1 className="text-2xl font-semibold text-white">
+                        Skills/Tech Stack
+                    </h1>
+                </div>
 
                 <div className="space-y-10">
                     {categories.map((category) => (

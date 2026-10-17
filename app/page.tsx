@@ -32,7 +32,7 @@ export default function Page() {
             <section id="experience" className="portfolio-section">
                 <Experience />
             </section>
-            <section id="activity" className="portfolio-section">
+            <section id="contribute" className="portfolio-section">
                 <Suspense fallback={<GithubActivitySkeleton />}>
                     <GithubActivity />
                 </Suspense>

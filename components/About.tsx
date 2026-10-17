@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { GraduationCap, Mail, MapPin, Rocket, User } from "lucide-react";
 
 export default function About() {
     return (
@@ -12,13 +12,13 @@ export default function About() {
                 >
                     <div className="flex-1 min-w-0">
                         <div className="flex items-center gap-2 mb-4">
-                            <Image
-                                src="/user.png"
-                                alt="About icon"
+                            <User
                                 width={25}
                                 height={25}
+                                className="text-(--primaryground)"
                             />
-                            <h1 className="text-lg font-semibold text-white">
+
+                            <h1 className="text-xl font-semibold text-white">
                                 About Me
                             </h1>
                         </div>
@@ -39,12 +39,11 @@ export default function About() {
                     </div>
 
                     <div className="flex-1 min-w-0 grid gap-4 text-sm">
-                        <div className="flex items-start gap-3">
-                            <Image
-                                src="/suitcase.png"
-                                alt="Degree"
+                        <div className="flex items-center gap-3">
+                            <GraduationCap
                                 width={25}
                                 height={25}
+                                className="text-(--primaryground)"
                             />
                             <div className="min-w-0">
                                 <p className="text-gray-400">Degree</p>
@@ -54,27 +53,25 @@ export default function About() {
                             </div>
                         </div>
 
-                        <div className="flex items-start gap-3">
-                            <Image
-                                src="/location.png"
-                                alt="Location"
+                        <div className="flex items-center gap-3">
+                            <MapPin
                                 width={25}
                                 height={25}
+                                className="text-(--primaryground)"
                             />
                             <div className="min-w-0">
                                 <p className="text-gray-400">Location</p>
                                 <p className="text-white wrap-break-word">
-                                    Cagayan De Oro City, Philippines
+                                    Cebu City, Philippines
                                 </p>
                             </div>
                         </div>
 
-                        <div className="flex items-start gap-3">
-                            <Image
-                                src="/mail.png"
-                                alt="Email"
+                        <div className="flex items-center gap-3">
+                            <Mail
                                 width={25}
                                 height={25}
+                                className="text-(--primaryground)"
                             />
                             <div className="min-w-0">
                                 <p className="text-gray-400">Email</p>
@@ -83,17 +80,18 @@ export default function About() {
                                 </p>
                             </div>
                         </div>
-                        <div className="flex items-start gap-3">
-                            <Image
-                                src="/rocket.png"
-                                alt="Currently"
-                                width={25}
-                                height={25}
+                        <div className="flex items-center gap-3">
+                            <Rocket
+                                width={40}
+                                height={40}
+                                className="text-(--primaryground)"
                             />
                             <div className="min-w-0">
                                 <p className="text-gray-400">Currently</p>
                                 <p className="text-white wrap-break-word">
-                                    Deepening my Next.js & backend skills
+                                    Improving my skills in Full-Stack Web
+                                    Development and looking for opportunities to
+                                    contribute to real-world projects.
                                 </p>
                             </div>
                         </div>

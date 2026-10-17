@@ -1,3 +1,5 @@
+import { GitPullRequest } from "lucide-react";
+
 type ContributionDay = {
     date: string;
     contributionCount: number;
@@ -112,6 +114,17 @@ export default async function GithubActivity() {
     return (
         <div className="max-w-6xl mx-auto px-6 md:px-12">
             <div className="content-panel py-12 px-8">
+                <div className="flex items-center gap-2 mb-4">
+                    <GitPullRequest
+                        width={25}
+                        height={25}
+                        className="text-(--primaryground)"
+                    />
+
+                    <h1 className="text-xl font-semibold text-white">
+                        Contribute
+                    </h1>
+                </div>
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-6">
                     <h2 className="text-sm text-gray-300">
                         <span className="text-white font-semibold">
@@ -137,7 +150,7 @@ export default async function GithubActivity() {
                         <div className="flex gap-1 pl-8">
                             {weeks.map((_, i) => {
                                 const label = monthLabels.find(
-                                    (m) => m.index === i
+                                    (m) => m.index === i,
                                 )?.label;
                                 return (
                                     <div
@@ -171,7 +184,7 @@ export default async function GithubActivity() {
                                             className={`h-3 w-3 rounded-sm ${
                                                 levelColors[
                                                     levelForCount(
-                                                        day.contributionCount
+                                                        day.contributionCount,
                                                     )
                                                 ]
                                             }`}

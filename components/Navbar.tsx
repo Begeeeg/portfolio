@@ -1,21 +1,38 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 
 export default function Navbar() {
     const [open, setOpen] = useState(false);
+    const [heroVisible, setHeroVisible] = useState(true);
+
+    useEffect(() => {
+        const hero = document.getElementById("hero");
+        if (!hero) return;
+
+        const observer = new IntersectionObserver(
+            ([entry]) => setHeroVisible(entry.isIntersecting),
+            { threshold: 0 },
+        );
+        observer.observe(hero);
+
+        return () => observer.disconnect();
+    }, []);
 
     const links: { href: string; label: string; contact?: boolean }[] = [
         { href: "/#about", label: "About" },
         { href: "/#skills", label: "Skills" },
         { href: "/#projects", label: "Projects" },
         { href: "/#experience", label: "Experience" },
+        { href: "/#contribute", label: "Contribute" },
         { href: "/#contact", label: "Contact", contact: true },
     ];
 
     return (
-        <nav className="site-nav">
+        <nav
+            className={`site-nav${heroVisible ? " site-nav--hero-hidden" : ""}`}
+        >
             <div className="site-nav-inner flex items-center justify-between">
                 <Link href="/" className="site-brand text-xl font-semibold">
                     VMY

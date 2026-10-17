@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { FolderKanban } from "lucide-react";
 
 type Project = {
     title: string;
@@ -88,13 +89,14 @@ export default function Projects() {
             <div className="content-panel py-12 px-8">
                 <div className="flex items-center justify-between mb-8">
                     <div className="flex items-center gap-2">
-                        <Image
-                            src="/folder.png"
-                            alt="Projects icon"
+                        <FolderKanban
                             width={25}
                             height={25}
+                            className="text-(--primaryground)"
                         />
-                        <h1 className="section-title">Projects</h1>
+                        <h1 className="text-2xl font-semibold text-white">
+                            Projects
+                        </h1>
                     </div>
 
                     <p className="text-sm text-gray-500">

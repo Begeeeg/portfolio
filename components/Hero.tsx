@@ -1,3 +1,4 @@
+import { Download, MoveUpRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -28,7 +29,11 @@ export default function Hero() {
                     <div className="hero-actions">
                         <Link className="button-primary" href="/#projects">
                             Explore my work
-                            <span aria-hidden="true">↗</span>
+                            <MoveUpRight
+                                width={15}
+                                height={20}
+                                className="flex items-center"
+                            />
                         </Link>
                         <a
                             className="button-secondary"
@@ -36,12 +41,7 @@ export default function Hero() {
                             download="Yecyec_CV.pdf"
                         >
                             Download resume
-                            <Image
-                                src="/download.png"
-                                alt=""
-                                width={17}
-                                height={17}
-                            />
+                            <Download width={20} height={20} />
                         </a>
                     </div>
 
