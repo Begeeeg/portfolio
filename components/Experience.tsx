@@ -33,7 +33,7 @@ export default function Experience() {
 
     return (
         <div className="max-w-6xl mx-auto px-6 md:px-12">
-            <div className="py-20 px-8 rounded-2xl bg-[#171717]/80 backdrop-blur-xl">
+            <div className="content-panel py-12 px-8">
                 <div className="flex items-center gap-2 mb-10">
                     <Image
                         src="/certificate.png"
@@ -41,7 +41,7 @@ export default function Experience() {
                         width={25}
                         height={25}
                     />
-                    <h1 className="text-lg font-semibold text-white">
+                    <h1 className="section-title">
                         Experience
                     </h1>
                 </div>

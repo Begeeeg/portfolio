@@ -4,15 +4,19 @@ export default function Skills() {
     const categories = [
         {
             label: "Languages",
-            skills: ["js", "ts", "python", "java", "c", "html", "css"],
+            skills: ["js", "ts", "python", "java", "c", "html", "css", "php"],
         },
         {
             label: "Frameworks",
-            skills: ["react", "nextjs", "express"],
+            skills: ["react", "nextjs"],
         },
         {
-            label: "Backend & Data",
-            skills: ["node-js", "mongodb", "xampp", "phpmyadmin"],
+            label: "Backend",
+            skills: ["node-js", "express"],
+        },
+        {
+            label: "Database",
+            skills: ["postgresql", "mongodb", "mysql", "firebase"],
         },
         {
             label: "Tools",
@@ -22,6 +26,11 @@ export default function Skills() {
                 "vscode",
                 "figma",
                 "clickup",
+                "xampp",
+                "phpmyadmin",
+                "supabase",
+                "postman",
+                "bruno",
                 "render",
                 "vercel",
             ],
@@ -30,10 +39,8 @@ export default function Skills() {
 
     return (
         <div className="max-w-6xl mx-auto px-6 md:px-12">
-            <div className="py-20 px-8 rounded-2xl bg-[#171717]/80 backdrop-blur-xl">
-                <h1 className="text-lg font-semibold text-white mb-10">
-                    Skills/Tech Stack
-                </h1>
+            <div className="content-panel py-12 px-8">
+                <h1 className="section-title mb-10">Skills/Tech Stack</h1>
 
                 <div className="space-y-10">
                     {categories.map((category) => (
@@ -56,7 +63,7 @@ export default function Skills() {
                                             alt={skill}
                                             width={32}
                                             height={32}
-                                            className="object-contain transition-all duration-300 group-hover:drop-shadow-[0_0_12px_#C02BFF]"
+                                            className="h-auto w-8 shrink-0 object-contain transition-all duration-300 group-hover:drop-shadow-[0_0_12px_#C02BFF]"
                                         />
                                         <p className="text-xs text-gray-400 capitalize group-hover:text-white transition-colors">
                                             {skill

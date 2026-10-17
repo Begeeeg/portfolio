@@ -22,7 +22,7 @@ export default function Education() {
 
     return (
         <div className="max-w-6xl mx-auto px-6 md:px-12">
-            <div className="py-20 px-8 rounded-2xl bg-[#171717]/90 backdrop-blur-xl">
+            <div className="content-panel py-12 px-8">
                 <div className="flex items-center gap-2 mb-10">
                     <Image
                         src="/graduation.png"
@@ -30,7 +30,7 @@ export default function Education() {
                         width={25}
                         height={25}
                     />
-                    <h1 className="text-lg font-semibold text-white">
+                    <h1 className="section-title">
                         Education
                     </h1>
                 </div>

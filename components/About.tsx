@@ -7,9 +7,7 @@ export default function About() {
                 <div
                     className="
                     relative flex flex-col md:flex-row justify-between gap-10
-                    pt-30 pb-20  px-8 rounded-2xl
-                    bg-[#171717]/80
-                    backdrop-blur-xl
+                    content-panel pt-12 pb-12 px-8
                 "
                 >
                     <div className="flex-1 min-w-0">
@@ -81,7 +79,7 @@ export default function About() {
                             <div className="min-w-0">
                                 <p className="text-gray-400">Email</p>
                                 <p className="text-white wrap-break-word">
-                                    vyecyec7@email.com
+                                    vyecyec7@gmail.com
                                 </p>
                             </div>
                         </div>

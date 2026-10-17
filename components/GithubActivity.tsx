@@ -84,7 +84,7 @@ export default async function GithubActivity() {
     if (!data) {
         return (
             <div className="max-w-6xl mx-auto px-6 md:px-12">
-                <div className="p-8 rounded-2xl bg-[#171717]/80 border border-white/10 backdrop-blur-xl">
+                <div className="content-panel p-8">
                     <p className="text-sm text-gray-500">
                         Couldn&apos;t load GitHub activity right now.
                     </p>
@@ -111,7 +111,7 @@ export default async function GithubActivity() {
 
     return (
         <div className="max-w-6xl mx-auto px-6 md:px-12">
-            <div className="py-20 px-8 rounded-2xl bg-[#171717]/80  backdrop-blur-xl">
+            <div className="content-panel py-12 px-8">
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-6">
                     <h2 className="text-sm text-gray-300">
                         <span className="text-white font-semibold">

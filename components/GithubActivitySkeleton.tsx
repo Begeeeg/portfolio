@@ -4,7 +4,7 @@ export default function GithubActivitySkeleton() {
 
     return (
         <div className="max-w-6xl mx-auto px-6 md:px-12">
-            <div className="py-20 px-8 rounded-2xl bg-[#171717]/80  backdrop-blur-xl animate-pulse">
+            <div className="content-panel py-12 px-8 animate-pulse">
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-6">
                     <div className="h-4 w-48 bg-white/10 rounded" />
                     <div className="flex items-center gap-2">

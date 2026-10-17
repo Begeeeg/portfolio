@@ -27,7 +27,7 @@ export default function Contact() {
 
     return (
         <div className="max-w-6xl mx-auto px-6 md:px-12">
-            <div className="pt-20 pb-5 px-8 rounded-2xl bg-[#171717]/80 backdrop-blur-xl">
+            <div className="content-panel pt-12 pb-5 px-8">
                 <div className="flex items-center gap-2 mb-6">
                     <Image
                         src="/send.png"
@@ -35,7 +35,7 @@ export default function Contact() {
                         width={25}
                         height={25}
                     />
-                    <h1 className="text-lg font-semibold text-white">
+                    <h1 className="section-title">
                         Contact
                     </h1>
                 </div>
