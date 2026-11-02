@@ -1,6 +1,7 @@
 import { Download, MoveUpRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { contact } from "@/lib/site";
 
 export default function Hero() {
     return (
@@ -17,13 +18,17 @@ export default function Hero() {
                         <span>Yecyec</span>
                     </h1>
                     <p className="hero-lead">
-                        I build thoughtful digital products, from polished
-                        interfaces to dependable backends.
+                        I build and ship full-stack TypeScript web apps, from
+                        the API to the deployed UI.
                     </p>
                     <p className="hero-description">
-                        A Computer Engineering graduate focused on full-stack
-                        web development. I bring ideas to life with clean,
-                        maintainable code and a strong eye for usability.
+                        Computer Engineering graduate based in Cebu City.
+                        I&apos;ve built a collaborative task manager with OAuth
+                        and role-based permissions, contributed to internal
+                        business web apps during my internship, and shipped
+                        hardware-backed projects on Raspberry Pi and ESP32. Open
+                        to junior full-stack roles and freelance full-stack app
+                        projects.
                     </p>
 
                     <div className="hero-actions">
@@ -37,8 +42,8 @@ export default function Hero() {
                         </Link>
                         <a
                             className="button-secondary"
-                            href="/Yecyec_CV.pdf"
-                            download="Yecyec_CV.pdf"
+                            href="/Yecyec_Resume.pdf"
+                            download="Yecyec_Resume.pdf"
                         >
                             Download resume
                             <Download width={20} height={20} />
@@ -47,7 +52,7 @@ export default function Hero() {
 
                     <div className="hero-socials" aria-label="Social links">
                         <a
-                            href="https://github.com/Begeeeg"
+                            href={contact.github.href}
                             target="_blank"
                             rel="noopener noreferrer"
                             aria-label="GitHub profile"
@@ -60,7 +65,7 @@ export default function Hero() {
                             />
                         </a>
                         <a
-                            href="https://www.linkedin.com/in/vmyecyec"
+                            href={contact.linkedin.href}
                             target="_blank"
                             rel="noopener noreferrer"
                             aria-label="LinkedIn profile"
@@ -73,7 +78,7 @@ export default function Hero() {
                             />
                         </a>
                         <a
-                            href="mailto:vyecyec7@gmail.com"
+                            href={`mailto:${contact.email}`}
                             aria-label="Email Victor"
                         >
                             <Image
@@ -84,7 +89,7 @@ export default function Hero() {
                             />
                         </a>
                         <span className="hero-social-caption">
-                            Cebu City, Philippines
+                            {contact.location}
                         </span>
                     </div>
                 </div>
@@ -115,7 +120,9 @@ export default function Hero() {
                         <span className="hero-note-mark">01</span>
                         <span>
                             <strong>Engineering mindset</strong>
-                            <small>Built for people. Designed to work.</small>
+                            <small>
+                                From embedded hardware to deployed web apps.
+                            </small>
                         </span>
                     </div>
                 </div>

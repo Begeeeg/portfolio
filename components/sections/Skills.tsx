@@ -47,9 +47,9 @@ export default function Skills() {
                         height={25}
                         className="text-(--primaryground)"
                     />
-                    <h1 className="text-2xl font-semibold text-white">
+                    <h2 className="text-2xl font-semibold text-white">
                         Skills/Tech Stack
-                    </h1>
+                    </h2>
                 </div>
 
                 <div className="space-y-10">

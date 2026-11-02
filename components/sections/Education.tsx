@@ -14,9 +14,9 @@ export default function Education() {
                 logo: "/ustp_cea.png",
             },
             highlights: [
-                "Built a strong foundation in programming, data structures, and software development, with exposure to machine learning and artificial intelligence",
-                "Developed a solid understanding of computer architecture, electronics, and embedded systems",
-                "Focused electives and thesis work on web application development",
+                "Foundation in programming, data structures, and software development, with exposure to machine learning and AI",
+                "Solid understanding of computer architecture, electronics, and embedded systems",
+                "Electives and thesis work focused on web application development",
             ],
         },
     ];
@@ -30,9 +30,9 @@ export default function Education() {
                         height={25}
                         className="text-(--primaryground)"
                     />
-                    <h1 className="text-xl font-semibold text-white">
+                    <h2 className="text-xl font-semibold text-white">
                         Education
-                    </h1>
+                    </h2>
                 </div>
 
                 <div className="space-y-6">
@@ -53,9 +53,9 @@ export default function Education() {
 
                             <div className="flex-1 text-center md:text-left">
                                 <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-1 mb-2">
-                                    <h2 className="text-white font-semibold leading-snug">
+                                    <h3 className="text-white font-semibold leading-snug">
                                         {entry.school}
-                                    </h2>
+                                    </h3>
                                     <span className="text-xs text-gray-500 shrink-0">
                                         {entry.period}
                                     </span>

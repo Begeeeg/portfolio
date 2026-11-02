@@ -12,22 +12,22 @@ export default function Experience() {
             logo: "/orblabs.png",
             href: "https://www.ordlabs.dev/",
             highlights: [
-                "Collaborated with a 5-person development team to build and maintain internal web applications used by company staff, following Agile methodology and the Software Development Life Cycle (SDLC)",
-                "Developed responsive user interfaces and implemented UI/UX best practices to improve usability of internal tools",
-                "Participated in testing, deployment, and client support activities to ensure software quality and alignment with business requirements",
+                "Contributed to a 5-person Agile team delivering internal web applications, including a web-based inventory and accounting system that supports day-to-day business operations, following the SDLC from planning through release",
+                "Built notification features for the system using Next.js, Node.js, Express 5 and TypeScript",
+                "Resolved merge conflicts and kept the shared codebase stable across the team's branches",
+                "Took part in testing, deployment and client support to keep the software aligned with business requirements",
             ],
         },
         {
             company: "Remotasks",
-            location: "Cagayan De Oro City",
+            location: "Remote",
             role: "AI Data Annotation Contributor",
             period: "March 2026 — September 2026",
             logo: "/remotasks.png",
             href: "https://www.remotasks.com/en",
             highlights: [
-                "Performed AI data annotation, task evaluation, and quality validation in accordance with project guidelines and quality standards",
-                "Maintained high accuracy and productivity across changing project requirements and workflows",
-                "Identified inconsistencies and documented issues to support ongoing project quality reviews",
+                "Performed AI data annotation and quality validation to project guidelines, maintaining high accuracy as requirements changed",
+                "Identified inconsistencies and documented issues to support quality reviews",
             ],
         },
     ];
@@ -41,9 +41,9 @@ export default function Experience() {
                         height={25}
                         className="text-(--primaryground)"
                     />
-                    <h1 className="text-xl font-semibold text-white">
+                    <h2 className="text-xl font-semibold text-white">
                         Experience
-                    </h1>
+                    </h2>
                 </div>
 
                 <div className="relative">
@@ -68,9 +68,9 @@ export default function Experience() {
                                 </Link>
 
                                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-1">
-                                    <h2 className="text-white font-semibold leading-snug">
+                                    <h3 className="text-white font-semibold leading-snug">
                                         {entry.role}
-                                    </h2>
+                                    </h3>
                                     <span className="text-xs text-gray-500 shrink-0 sm:pl-4">
                                         {entry.period}
                                     </span>

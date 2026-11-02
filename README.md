@@ -1,5 +1,17 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Project structure
+
+- `app/` contains the App Router pages, layouts, metadata, and API route handlers.
+- `components/hero/` contains the introduction and hero visuals.
+- `components/sections/` contains the portfolio's content sections.
+- `components/layout/` contains site-wide navigation and footer components.
+- `components/shared/` contains reusable cross-section UI such as error boundaries.
+- `features/contact/` contains the contact CTA and email provider integration.
+- `features/github/` contains GitHub activity UI and loading states.
+- `lib/` contains shared site details and project data.
+- `public/` contains static assets.
+
 ## Getting Started
 
 First, run the development server:

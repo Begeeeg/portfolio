@@ -74,8 +74,8 @@ const levelColors = [
     "bg-white/[0.04]",
     "bg-[#6A00FF]/25",
     "bg-[#6A00FF]/50",
-    "bg-[#9A15FF]/75",
-    "bg-[#C02BFF]",
+    "bg-[#C02BFF]/75",
+    "bg-[#9A15FF]",
 ];
 
 const dayLabels = ["", "Mon", "", "Wed", "", "Fri", ""];
@@ -121,17 +121,17 @@ export default async function GithubActivity() {
                         className="text-(--primaryground)"
                     />
 
-                    <h1 className="text-xl font-semibold text-white">
-                        Contribute
-                    </h1>
+                    <h2 className="text-xl font-semibold text-white">
+                        GitHub Activity
+                    </h2>
                 </div>
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-6">
-                    <h2 className="text-sm text-gray-300">
+                    <h3 className="text-sm text-gray-300">
                         <span className="text-white font-semibold">
                             {totalContributions}
                         </span>{" "}
                         contributions in the last year
-                    </h2>
+                    </h3>
 
                     <div className="flex items-center gap-2 text-xs text-gray-500">
                         <span>Less</span>

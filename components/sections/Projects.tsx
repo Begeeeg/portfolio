@@ -1,80 +1,28 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type PointerEvent } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { FolderKanban } from "lucide-react";
+import { projects } from "@/lib/projects";
 
-type Project = {
-    title: string;
-    image: string;
-    href: string;
-    stack: string[];
-    description: string;
-    status?: "in-progress";
-};
+function updatePreviewTilt(event: PointerEvent<HTMLDivElement>) {
+    if (event.pointerType === "touch") return;
+
+    const bounds = event.currentTarget.getBoundingClientRect();
+    const x = (event.clientX - bounds.left) / bounds.width;
+    const y = (event.clientY - bounds.top) / bounds.height;
+
+    event.currentTarget.style.setProperty("--tilt-x", `${(0.5 - y) * 9}deg`);
+    event.currentTarget.style.setProperty("--tilt-y", `${(x - 0.5) * 11}deg`);
+}
+
+function resetPreviewTilt(event: PointerEvent<HTMLDivElement>) {
+    event.currentTarget.style.setProperty("--tilt-x", "0deg");
+    event.currentTarget.style.setProperty("--tilt-y", "0deg");
+}
 
 export default function Projects() {
-    const projects: Project[] = [
-        {
-            title: "Progress",
-            image: "/progress.png",
-            href: "https://progress-developer.vercel.app",
-            stack: [
-                "Next.js",
-                "Tailwind",
-                "Node.js",
-                "Express",
-                "TypeScript",
-                "MongoDB",
-                "Vitest",
-                "Supertest",
-                "Zod",
-            ],
-            description:
-                "A SaaS-style collaborative list and task manager for individuals and teams of developers — create personal lists or invite members to shared ones, assign and track tasks together, with owner-controlled permissions. Built full-stack with a TypeScript MERN stack and secure cookie-based JWT authentication, and OAuth to access GitHub, Google, LinkedIn, and Facebook accounts for seamless account connectivity.",
-        },
-        {
-            title: "To Do List",
-            image: "/todolist_project.png",
-            href: "https://todo-frontend-seven-fawn.vercel.app/",
-            stack: [
-                "Next.js",
-                "Tailwind",
-                "Node.js",
-                "Express",
-                "MongoDB",
-                "TypeScript",
-            ],
-            description:
-                "A web application that allows users to create, read, update, and delete tasks. It features a responsive design and a user-friendly interface.",
-        },
-        {
-            title: "Nyxon Banking Kiosk",
-            image: "/nyxon_banking_kiosk.png",
-            href: "https://github.com/ArcaIcr/GUI---BANKING-KIOSK",
-            stack: ["Python - PyQt5", "MySQL"],
-            description:
-                "An embedded banking kiosk system built on a Raspberry Pi 4, featuring a touchscreen GUI for cash deposits via bill acceptor, thermal receipt printing, and transaction history tracking. As co-leader, I directed the GUI development and database integration while coordinating hardware testing across the team.",
-        },
-        {
-            title: "MediTrack",
-            image: "/meditrack.png",
-            href: "https://github.com/Begeeeg/mediTrackPit",
-            stack: ["HTML", "Javascript", "CSS", "Php", "PhpMyAdmin"],
-            description:
-                "A hospital medical inventory system that automates supply tracking using RFID tags and an ESP32 microcontroller. Instead of manual counts, staff get real-time stock visibility, low-supply alerts, and usage logs — reducing tracking errors and freeing up time for patient care. Built with a PHP/MySQL backend for inventory records and reporting.",
-        },
-        {
-            title: "Weather Application",
-            image: "/weather_webApp.png",
-            href: "https://begeeeg.github.io/Weather-App/",
-            stack: ["HTML", "Javascript", "CSS"],
-            description:
-                "A weather web application that uses a Weather API to fetch real-time conditions and forecasts for any searched city, displaying temperature, humidity, and current sky conditions in a clean, responsive interface.",
-        },
-    ];
-
     const [index, setIndex] = useState(0);
     const project = projects[index];
 
@@ -94,9 +42,9 @@ export default function Projects() {
                             height={25}
                             className="text-(--primaryground)"
                         />
-                        <h1 className="text-2xl font-semibold text-white">
+                        <h2 className="text-2xl font-semibold text-white">
                             Projects
-                        </h1>
+                        </h2>
                     </div>
 
                     <p className="text-sm text-gray-500">
@@ -114,13 +62,42 @@ export default function Projects() {
                     </button>
 
                     <div className="flex-1 flex flex-col md:flex-row items-stretch gap-6 rounded-xl overflow-hidden bg-white/3 border border-white/10 md:min-h-95">
-                        <div className="relative w-full md:w-1/2 aspect-video md:aspect-auto bg-black/30">
-                            <Image
-                                src={project.image}
-                                alt={project.title}
-                                fill
-                                className="object-cover"
-                            />
+                        <div
+                            key={project.title}
+                            className="project-preview-scene relative w-full md:w-1/2 aspect-video md:aspect-auto md:min-h-95 bg-black/30"
+                            onPointerMove={updatePreviewTilt}
+                            onPointerLeave={resetPreviewTilt}
+                        >
+                            <div className="project-preview-surface absolute inset-0">
+                                <Image
+                                    src={project.image}
+                                    alt={`${project.title} project preview`}
+                                    fill
+                                    className="project-preview-image object-cover"
+                                />
+                                <div
+                                    className="project-preview-shade"
+                                    aria-hidden="true"
+                                />
+                                <div className="project-preview-label">
+                                    <span className="project-preview-mark">
+                                        ↗
+                                    </span>
+                                    <span>
+                                        <strong>{project.title}</strong>
+                                        <small>
+                                            {project.group === "smaller"
+                                                ? "SMALLER BUILD"
+                                                : "SELECTED WORK"}
+                                        </small>
+                                    </span>
+                                </div>
+                                <span className="project-preview-count">
+                                    {String(index + 1).padStart(2, "0")}{" "}
+                                    <span>/</span>{" "}
+                                    {String(projects.length).padStart(2, "0")}
+                                </span>
+                            </div>
                         </div>
 
                         <div className="w-full md:w-1/2 p-6 flex flex-col justify-center">
@@ -130,11 +107,17 @@ export default function Projects() {
                                 </span>
                             )}
 
-                            <h2 className="text-xl font-semibold text-white mb-3">
-                                {project.title}
-                            </h2>
+                            {project.group === "smaller" && (
+                                <span className="text-xs px-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-gray-400 mb-3 inline-block w-fit">
+                                    Smaller build
+                                </span>
+                            )}
 
-                            <p className="text-sm text-gray-400 leading-relaxed mb-5 line-clamp-4">
+                            <h3 className="text-xl font-semibold text-white mb-3">
+                                {project.title}
+                            </h3>
+
+                            <p className="text-sm text-gray-400 leading-relaxed mb-5">
                                 {project.description}
                             </p>
 

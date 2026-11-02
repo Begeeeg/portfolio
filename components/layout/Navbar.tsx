@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
     const [open, setOpen] = useState(false);
@@ -22,15 +23,19 @@ export default function Navbar() {
 
     const links: { href: string; label: string; contact?: boolean }[] = [
         { href: "/#about", label: "About" },
+        { href: "/#what-i-bring", label: "What I Bring" },
         { href: "/#skills", label: "Skills" },
+        { href: "/#implementation", label: "Implementation" },
+        { href: "/#structure", label: "Structure" },
         { href: "/#projects", label: "Projects" },
         { href: "/#experience", label: "Experience" },
-        { href: "/#contribute", label: "Contribute" },
+        { href: "/#contribute", label: "GitHub" },
         { href: "/#contact", label: "Contact", contact: true },
     ];
 
     return (
         <nav
+            aria-label="Primary"
             className={`site-nav${heroVisible ? " site-nav--hero-hidden" : ""}`}
         >
             <div className="site-nav-inner flex items-center justify-between">
@@ -52,12 +57,16 @@ export default function Navbar() {
 
                 <button
                     onClick={() => setOpen(!open)}
-                    className="lg:hidden rounded-md border border-white/10 px-3 py-2 text-lg text-white"
-                    aria-label="Toggle menu"
+                    className="lg:hidden rounded-md border border-white/10 p-2 text-white"
+                    aria-label={open ? "Close menu" : "Open menu"}
                     aria-expanded={open}
                     aria-controls="mobile-navigation"
                 >
-                    {open ? "Close" : "Menu"}
+                    {open ? (
+                        <X width={22} height={22} aria-hidden="true" />
+                    ) : (
+                        <Menu width={22} height={22} aria-hidden="true" />
+                    )}
                 </button>
 
                 {open && (

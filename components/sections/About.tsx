@@ -1,4 +1,5 @@
 import { GraduationCap, Mail, MapPin, Rocket, User } from "lucide-react";
+import { contact } from "@/lib/site";
 
 export default function About() {
     return (
@@ -18,24 +19,32 @@ export default function About() {
                                 className="text-(--primaryground)"
                             />
 
-                            <h1 className="text-xl font-semibold text-white">
+                            <h2 className="text-xl font-semibold text-white">
                                 About Me
-                            </h1>
+                            </h2>
                         </div>
 
-                        <p className="text-gray-400 text-sm leading-relaxed">
-                            I&apos;m a newly graduated Computer Engineer with a
-                            strong foundation in programming, data structures,
-                            and software development. I&apos;m particularly
-                            interested in Web Development and enjoy turning
-                            ideas into clean, intuitive websites and web
-                            applications.
-                            <br />
-                            <br />
-                            I&apos;m eager to learn, grow, and contribute to
-                            real-world projects while continuously improving my
-                            skills.
-                        </p>
+                        <div className="space-y-4 text-gray-400 text-sm leading-relaxed">
+                            <p>
+                                I&apos;m a Computer Engineering graduate who
+                                builds full-stack web applications, mostly with
+                                Next.js, Node/Express and TypeScript. I like the
+                                parts of a project people don&apos;t see:
+                                authentication, validation, tests, CI and
+                                deployment.
+                            </p>
+                            <p>
+                                I&apos;m looking for a junior full-stack role,
+                                and I&apos;m open to on-site, hybrid, remote or
+                                relocation. I also take on freelance full-stack
+                                app projects.
+                            </p>
+                            <p>
+                                I work from Cebu City (UTC+8), communicate in
+                                written English, and use GitHub, ClickUp,
+                                Postman and Vercel day to day.
+                            </p>
+                        </div>
                     </div>
 
                     <div className="flex-1 min-w-0 grid gap-4 text-sm">
@@ -62,7 +71,7 @@ export default function About() {
                             <div className="min-w-0">
                                 <p className="text-gray-400">Location</p>
                                 <p className="text-white wrap-break-word">
-                                    Cebu City, Philippines
+                                    {contact.location}
                                 </p>
                             </div>
                         </div>
@@ -76,7 +85,7 @@ export default function About() {
                             <div className="min-w-0">
                                 <p className="text-gray-400">Email</p>
                                 <p className="text-white wrap-break-word">
-                                    vyecyec7@gmail.com
+                                    {contact.email}
                                 </p>
                             </div>
                         </div>
@@ -89,9 +98,9 @@ export default function About() {
                             <div className="min-w-0">
                                 <p className="text-gray-400">Currently</p>
                                 <p className="text-white wrap-break-word">
-                                    Improving my skills in Full-Stack Web
-                                    Development and looking for opportunities to
-                                    contribute to real-world projects.
+                                    Open to junior full-stack roles (on-site,
+                                    hybrid, remote or relocation) and freelance
+                                    full-stack app projects.
                                 </p>
                             </div>
                         </div>
